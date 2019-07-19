@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="log.console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %5p (%C{1}:%M) - %m%n" />
+        </layout>
+        <!--
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+           <param name="levelMin"   value="debug" />
+           <param name="levelMax"   value="warn" />
+           <param name="AcceptOnMatch" value="true" />
+        </filter>-->
+
+    </appender>
+
+    <appender name="log.file" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File"      value="D:\\atguigu4XML.log" />
+        <param name="Append"    value="true" />
+        <param name="DatePattern"  value="'.'yyyy-MM-dd" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %5p (%C{1}:%M) - %m%n" />
+        </layout>
+        <!-- <filter class="org.apache.log4j.varia.LevelRangeFilter">
+           <param name="levelMin"   value="info" />
+           <param name="levelMax"   value="info" />
+           <param name="AcceptOnMatch" value="true" />
+          </filter> -->
+    </appender>
+    <!--
+    <logger name="com.atguigu" >
+     <level value="info" />
+     <appender-ref ref="log.console" />
+     <appender-ref ref="log.file" />
+    </logger>
+
+    <logger name="com.atguigu.dao" >
+     <level value="debug" />
+     <appender-ref ref="log.console" />
+     <appender-ref ref="log.file" />
+    </logger>-->
+
+    <!-- -->
+    <root>
+        <level value="info" />
+        <appender-ref ref="log.console" />
+        <appender-ref ref="log.file" />
+    </root>
+
+
+</log4j:configuration>
+
